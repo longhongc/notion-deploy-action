@@ -1,5 +1,7 @@
 name = "longhongc"
 
+page = "https://longhongc.notion.site/longhongc/ARIAC-2023-9c9b0566e7144cbfa521f42d93eaf1cf"
+
 theme = "light"
 
 [site]
