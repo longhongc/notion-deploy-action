@@ -41,12 +41,17 @@ jobs:
           loconotion "site.toml"
         working-directory: loconotion
 
+      - name: Set environment variable
+        run: |
+          export MY_FOLDER="pages_repo/dist/longhongc"
+          echo $MY_FOLDER
+
       - name: Deploy to Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: pages_repo/dist/longhongc
+          FOLDER: ${{ env.MY_FOLDER }}
           CLEAN: true
           SINGLE_COMMIT: true
 
