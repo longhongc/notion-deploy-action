@@ -41,6 +41,12 @@ jobs:
           loconotion "site.toml"
         working-directory: loconotion
 
+      - name: Wait for Folder
+        run: |
+          while [ ! -s "pages_repo/dist" ]; do
+            sleep 1
+          done
+
       - name: Set env
         run: |
           echo "MY_FOLDER=pages_repo/dist/$(ls -1 pages_repo/dist | sed -n 1p)" >> $GITHUB_ENV
