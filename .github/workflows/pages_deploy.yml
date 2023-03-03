@@ -41,10 +41,15 @@ jobs:
           loconotion "site.toml"
         working-directory: loconotion
 
+      - name: Set env
+        run: |
+          echo "MY_FOLDER=pages_repo/dist/$(ls -1 pages_repo/dist | sed -n 1p)" >> $GITHUB_ENV
+
+      - name: Test
+        run: echo ${{ env.MY_FOLDER }}
+
       - name: Deploy to Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
-        env:
-          MY_FOLDER: echo "pages_repo/dist/longhongc"
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
