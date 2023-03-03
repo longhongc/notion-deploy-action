@@ -33,12 +33,6 @@ jobs:
         run: docker-compose build loconotion
         working-directory: loconotion
 
-      - name: Wait for Folder
-        run: |
-          while [ ! -s "/app/loconotion/dist" ]; do
-            sleep 1
-          done
-
       - name: Run Loconotion
         run: |
           docker-compose run \
