@@ -13,9 +13,10 @@ It is modified to accept a toml file in the repository instead of using github s
 1. Copy all the files into the target repository. (Or use template)
 2. Modify the .toml file to suit custom need ([Full file setting](https://github.com/leoncvlt/loconotion#advanced-usage))
 3. Go to **Settings/Actions/General** and choose **Workflow permissions** to `Read and Write permissions`
-4. Run workflow `Deploy to Pages` on the left side in **Actions** to start generating the htmls
-5. After the htmls are generated in the gh-pages branch, go to **Settings/Pages**, set **Source** to `Deploy from a branch`, and choose `gh-pages /root` as the **Branch**
-6. The github site url should appears on the top of **Settings/Pages**
+4. Run workflow `Deploy to Pages` on the left side in **Actions** to start generating the htmls   
+   (If fails because of files or folder not found, try run the action again)  
+6. After the htmls are generated in the gh-pages branch, go to **Settings/Pages**, set **Source** to `Deploy from a branch`, and choose `gh-pages /root` as the **Branch**
+7. The github site url should appears on the top of **Settings/Pages**
 
 ## Credits
 Credits to these awesome works
