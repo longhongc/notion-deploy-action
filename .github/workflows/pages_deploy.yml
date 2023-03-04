@@ -45,6 +45,9 @@ jobs:
           loconotion "site.toml"
         working-directory: loconotion
 
+      - name: Test1
+        run: ls ${GITHUB_WORKSPACE}/pages_repo/dist
+
       - name: Set env
         run: |
           echo "MY_FOLDER=pages_repo/dist/$(ls -1 pages_repo/dist | sed -n 1p)" >> $GITHUB_ENV
