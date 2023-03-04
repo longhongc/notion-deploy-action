@@ -29,6 +29,10 @@ jobs:
         with:
           path: pages_repo
 
+      - name: Create output directory
+        run: |
+          mkdir -p pages_repo/dist
+
       - name: Build Loconotion docker image
         run: docker-compose build loconotion
         working-directory: loconotion
